@@ -14,10 +14,10 @@ export default function App() {
 
   const search = evt =>{
     if(evt.key==="Enter"){
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${API_KEY}`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${API_KEY}`)
       .then(res=>res.json())
       .then(result=>{
-        if(result.cod!==undefined && result.main==="undefined"){
+        if(result.cod!==undefined && result.main===undefined){
             
             setWeather({});
             setError(result.message);
